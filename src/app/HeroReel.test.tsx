@@ -17,16 +17,20 @@ describe("HeroReel", () => {
     vi.useRealTimers();
   });
 
-  it("renders 3 tabs with the first one selected", () => {
+  it("renders 4 tabs with the first one selected", () => {
     render(<HeroReel />);
 
     const tabs = screen.getAllByRole("tab");
-    expect(tabs).toHaveLength(3);
+    expect(tabs).toHaveLength(4);
     expect(screen.getByRole("tab", { name: "Combustibles" })).toHaveAttribute(
       "aria-selected",
       "true"
     );
-    expect(screen.getByRole("tab", { name: "Energía solar" })).toHaveAttribute(
+    expect(screen.getByRole("tab", { name: "Equipamientos energéticos" })).toHaveAttribute(
+      "aria-selected",
+      "false"
+    );
+    expect(screen.getByRole("tab", { name: "Autopartes" })).toHaveAttribute(
       "aria-selected",
       "false"
     );
@@ -63,7 +67,7 @@ describe("HeroReel", () => {
       vi.advanceTimersByTime(5000);
     });
 
-    expect(screen.getByRole("tab", { name: "Energía solar" })).toHaveAttribute(
+    expect(screen.getByRole("tab", { name: "Equipamientos energéticos" })).toHaveAttribute(
       "aria-selected",
       "true"
     );

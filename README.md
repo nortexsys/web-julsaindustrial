@@ -17,4 +17,18 @@ Next.js + TypeScript · Supabase (Postgres, Auth, Storage) · Vercel.
 
 ## Estado
 
-Hito 1 en curso (cimientos). Ver `openspec/changes/add-web-julsa-r1/tasks.md`.
+Implementado: web pública (inicio, nosotros, contacto, cuatro líneas de producto, textos
+legales), portal de cliente y panel de administración (productos, pedidos y clientes), con
+Supabase para base de datos, autenticación y almacenamiento (4 migraciones, con RLS y
+endurecimiento de seguridad). 127 tests unitarios, un flujo e2e crítico con Playwright y CI en
+GitHub Actions. Las tareas de `openspec/changes/add-web-julsa-r1/tasks.md` no se han ido
+marcando y no reflejan este avance.
+
+## Desarrollo
+
+```bash
+cp .env.example .env.local   # rellenar con los valores del proyecto Supabase
+npm ci
+npm run dev
+npm run lint && npx tsc --noEmit && npm test
+```

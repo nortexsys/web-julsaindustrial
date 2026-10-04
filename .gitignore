@@ -39,3 +39,5 @@ _source/
 _work/
 
 .vercel
+
+*.tsbuildinfo
